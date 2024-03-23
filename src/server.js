@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = 3000;
 
-// Middleware para fazer o parse do corpo da requisição como JSON
 app.use(bodyParser.json());
 
 const database = [
