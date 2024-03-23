@@ -20,13 +20,67 @@
 ## 🔍 Pré Condições 
 Antes de executar os casos de teste, é necessário que:
 
-- O ambiente de desenvolvimento esteja configurado com as dependências necessárias para a execução dos testes.
-- O código da funcionalidade de envio de listas de presença esteja implementado.
+- O ambiente esteja configurado com as dependências necessárias para a execução dos testes.
+- O servidor esteja em execução.
+- O banco de dados de presenças está funcional, esteja ele vazio ou contendo registros existentes.
+- O sistema está acessível e operacional.
 
 ## 🛠️ Procedimentos de Teste
 
+- Enviar uma solicitação POST para a rota /presenca com os parâmetros studentid e classid.
+- Verificar o retorno da solicitação.
+
 ## 💭 Resultados Esperados
+
+### Caso 1 - Se a presença for registrada com sucesso
+- O sistema deve retornar um status HTTP 201 (Created).
+- O corpo da resposta deve conter a mensagem "Presença registrada com sucesso.".
+
+### Caso 2 - Se a lista de presença estiver vazia
+- O sistema deve retornar um status HTTP 400 (Bad Request).
+- O corpo da resposta deve conter a mensagem "A lista de presença está vazia.".
+
+### Caso 3 - Se algum dos parâmetros studentid ou classid for nulo
+- O sistema deve retornar um status HTTP 400 (Bad Request).
+- O corpo da resposta deve conter a mensagem "Parâmetros nulos.".
+
+### Caso 4 - Se algum dos parâmetros studentid ou classid for inválido
+- O sistema deve retornar um status HTTP 400 (Bad Request).
+- O corpo da resposta deve conter a mensagem "Parâmetros inválidos.".
+
+### Caso 5 - Se a presença já estiver registrada no banco de dados
+- O sistema deve retornar um status HTTP 400 (Bad Request).
+- O corpo da resposta deve conter a mensagem "Presença já registrada.".
 
 ## ✅ Resultados Obtidos
 
+### Caso 1 - Se a presença for registrada com sucesso
+- O sistema retornou um status HTTP 201 (Created).
+- O corpo da resposta continha a mensagem "Presença registrada com sucesso.".
+- O banco de dados de presenças contém um novo registro.
+
+### Caso 2 - Se a lista de presença estiver vazia
+- O sistema retornou um status HTTP 400 (Bad Request).
+- O corpo da resposta continha a mensagem "A lista de presença está vazia.".
+- O banco de dados de presenças não foi alterado.
+
+### Caso 3 - Se algum dos parâmetros studentid ou classid for nulo
+- O sistema retornou um status HTTP 400 (Bad Request).
+- O corpo da resposta continha a mensagem "Parâmetros nulos.".
+- O banco de dados de presenças não foi alterado.
+
+### Caso 4 - Se algum dos parâmetros studentid ou classid for inválido
+- O sistema retornou um status HTTP 400 (Bad Request).
+- O corpo da resposta continha a mensagem "Parâmetros inválidos.".
+- O banco de dados de presenças não foi alterado.
+
+### Caso 5 - Se a presença já estiver registrada no banco de dados
+- O sistema retornou um status HTTP 400 (Bad Request).
+- O corpo da resposta continha a mensagem "Presença já registrada.".
+- O banco de dados de presenças não foi alterado.
+
 ## 📊 Pós Condições
+
+- O banco de dados de presenças pode conter novos registros, dependendo do resultado do teste.
+- O sistema permanece acessível e operacional.
+- O servidor permanece em execução, a menos que especificado de outra forma.
