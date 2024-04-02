@@ -5,10 +5,9 @@
 
 ## 🎯 Objetivo 
 
-&emsp; O objetivo deste relatório é documentar um caso de teste de software relacionado ao projeto do Módulo 5 da Turma 9 - Engenharia de Software. Para isso, será utilizado o framework Jest para a realização de testes unitários e de integração.
+&emsp; Testes de integração são procedimentos realizados durante o desenvolvimento de software para verificar a comunicação eficaz entre módulos ou componentes que de uma aplicação. Essa etapa visa garantir que as partes funcionem corretamente quando integradas, evitando falhas e conflitos no sistema como um todo.
 
-
-&emsp; O caso de teste a ser documentado é referente à funcionalidade de envio de listas de presença para um banco de dados. A funcionalidade é composta por um endpoint que recebe uma lista de presença e a insere no banco de dados mockado.
+&emsp; O objetivo específico desse teste da ponderada é documentar e executar casos de teste para a funcionalidade de envio de listas de presença para o banco de dados mockado. O teste consiste em cinco cenários específicos, cada um avaliando um aspecto diferente da funcionalidade e possíveis erros. Para realizar o teste, utilizamos as ferramentas Jest e Supertest, executando-o em um ambiente de desenvolvimento local.
 
 ### Tecnologias Utilizadas
 
